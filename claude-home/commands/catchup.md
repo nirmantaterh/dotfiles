@@ -1,0 +1,1 @@
+Read repository instructions and NOTES.md if present. Report branch and working-tree state, last 10 commits, TODOs/task specs, current issue and acceptance criteria, last verification report, and unverified work. Do not modify files.
