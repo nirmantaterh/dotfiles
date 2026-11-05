@@ -39,6 +39,8 @@ market_present caveman     || claude plugin marketplace add JuliusBrussee/cavema
 plugin_installed 'caveman@caveman' || claude plugin install caveman@caveman
 market_present i-have-adhd || claude plugin marketplace add ayghri/i-have-adhd
 plugin_installed 'i-have-adhd@i-have-adhd' || claude plugin install i-have-adhd@i-have-adhd
+market_present karpathy-skills || claude plugin marketplace add multica-ai/andrej-karpathy-skills
+plugin_installed 'andrej-karpathy-skills@karpathy-skills' || claude plugin install andrej-karpathy-skills@karpathy-skills
 touch ~/.claude/.i-have-adhd-always
 
 say "rtk (oss edition)"
@@ -71,6 +73,13 @@ BLOCK
   echo "guard added"
 else
   echo "guard already present"
+fi
+
+if ! grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc 2>/dev/null; then
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+  echo "PATH export added"
+else
+  echo "PATH export already present"
 fi
 
 say "done"
